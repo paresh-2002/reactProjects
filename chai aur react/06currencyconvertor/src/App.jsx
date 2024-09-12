@@ -25,7 +25,7 @@ function App() {
     <div
       className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
       style={{
-        backgroundImage: `url('${'background.jpg'}')`,
+        backgroundImage: 'url(background.jpg)',
       }}
     >
       <div className="w-full">
@@ -44,6 +44,7 @@ function App() {
                 onCurrencyChange={(currency) => setFrom(currency)}
                 selectCurrency={from}
                 onAmountChange={(amount) => setAmount(amount)}
+                
               />
             </div>
             <div className="relative w-full h-0.5">
@@ -63,6 +64,7 @@ function App() {
                 onCurrencyChange={(currency) => setTo(currency)}
                 selectCurrency={to}
                 onAmountChange={(amount) => setAmount(amount)}
+                amountDisable
               />
             </div>
             <button
