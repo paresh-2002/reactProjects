@@ -1,15 +1,18 @@
 import { useState } from "react";
-
 import { useDispatch } from "react-redux";
 import {addTodo} from "../features/todo/todoSlice";
 
 function AddTodo() {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
-
-  const addTodoHandler = (e) => {
+ 
+  const addTodoHandler = async(e) => {
     e.preventDefault();
-    dispatch(addTodo(input));
+    try {
+      dispatch(addTodo(input));
+    } catch (error) {
+      console.log("Error" + error);
+    }
     setInput("");
   };
   return (
