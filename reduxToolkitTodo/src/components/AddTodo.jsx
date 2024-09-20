@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {addTodo} from "../features/todo/todoSlice";
+import {TodoActions} from "../features/todo/todoSlice";
 
 function AddTodo() {
   const [input, setInput] = useState("");
@@ -9,7 +9,7 @@ function AddTodo() {
   const addTodoHandler = async(e) => {
     e.preventDefault();
     try {
-      dispatch(addTodo(input));
+      dispatch(TodoActions.addTodo(input));
     } catch (error) {
       console.log("Error" + error);
     }

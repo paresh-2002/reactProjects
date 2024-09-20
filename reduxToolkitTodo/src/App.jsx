@@ -5,7 +5,7 @@ import "./App.css";
 import AddTodo from "./components/AddTodo";
 import Todos from "./components/Todos";
 import { useDispatch, useSelector } from "react-redux";
-import { setTodos } from "./features/todo/todoSlice";
+import { TodoActions } from "./features/todo/todoSlice";
 
 function App() {
   const todos = useSelector((state) => state.todos);
@@ -20,7 +20,7 @@ function App() {
         const snapshot = await get(res);
         if (snapshot.exists()) {
           const todosData = Object.values(snapshot.val());
-          dispatch(setTodos(todosData));
+          dispatch(TodoActions.setTodos(todosData));
           console.log("TodoList:", todosData);
         }
       } catch (error) {

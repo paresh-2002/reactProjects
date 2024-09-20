@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { removeTodo, updateTodo } from "../features/todo/todoSlice";
 import { useState } from "react";
+import {TodoActions} from '../features/todo/todoSlice'
 
 function Todos({ todo }) {
   const [isTodoEditable, setIsTodoEditable] = useState(false);
@@ -9,7 +9,7 @@ function Todos({ todo }) {
 
   const saveTodo = () => {
     if (todoMsg.trim()) {
-      dispatch(updateTodo({ id: todo.id, text: todoMsg }));
+      dispatch(TodoActions.updateTodo({ id: todo.id, text: todoMsg }));
       setIsTodoEditable(false);
     }
   };
@@ -51,7 +51,7 @@ function Todos({ todo }) {
             </button>
             <button
               className="inline-flex w-8 h-8 rounded-lg text-sm border border-black/10 justify-center items-center bg-gray-50 hover:bg-gray-100"
-              onClick={() => dispatch(removeTodo(todo.id))}
+              onClick={() => dispatch(TodoActions.removeTodo(todo.id))}
             >
               ❌
             </button>

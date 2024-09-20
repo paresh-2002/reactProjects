@@ -1,0 +1,17 @@
+.container {
+    width: 30%;
+    margin: auto;
+    border: 1px solid black;
+    padding: 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 30px;
+  }
+  label {
+    font-size: 20px;
+  }
+  .resultParas {
+    margin-top: 10px;
+  }
+  
