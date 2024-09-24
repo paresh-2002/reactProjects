@@ -21,7 +21,7 @@ function App() {
         if (snapshot.exists()) {
           const todosData = Object.values(snapshot.val());
           dispatch(TodoActions.setTodos(todosData));
-          console.log("TodoList:", todosData);
+          // console.log("TodoList:", todosData);
         }
       } catch (error) {
         setError("Error fetching todos: " + error.message);
@@ -30,7 +30,7 @@ function App() {
       }
     };
     fetchTodos();
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
